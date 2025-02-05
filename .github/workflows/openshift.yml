@@ -141,5 +141,5 @@ jobs:
 
     - name: My deployment
       run: | 
-        echo ${{ steps.push-image-outputs.registry-path }}
+        echo ${{ steps.push-image.outputs.registry-path }}
         oc get pods

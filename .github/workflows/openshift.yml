@@ -50,7 +50,7 @@ env:
   IMAGE_REGISTRY_PASSWORD: ${{ secrets.GHCR_TOKEN }}
 
   # 🖊️ EDIT to specify custom tags for the container image, or default tags will be generated below.
-  IMAGE_TAGS: ""
+  IMAGE_TAGS: "1.0.${{ github.run_number }}"
 
 on:
   # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
@@ -139,11 +139,11 @@ jobs:
         insecure_skip_tls_verify: true
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
 
-    - name: My deployment
-      run: | 
+    - name: my deployment 
+      run: |
         export IMAGE=${{ steps.push-image.outputs.registry-path }}
         echo ${{ steps.push-image.outputs.registry-path }}
         sed -i 's|\${IMAGE}|'"$IMAGE"'|g' pod.yaml
         oc apply -f pod.yaml
-        oc get pods
-        
+        oc get pods 
+    

@@ -141,7 +141,7 @@ jobs:
 
     - name: My deployment
       run: | 
-        exxport IMAGE=${{ steps.push-image.outputs.registry-path }}
+        export IMAGE=${{ steps.push-image.outputs.registry-path }}
         echo ${{ steps.push-image.outputs.registry-path }}
         sed -i 's|\${IMAGE}|'"$IMAGE"'|g' pod.yaml
         oc apply -f pod.yaml

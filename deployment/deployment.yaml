@@ -8,6 +8,11 @@ spec:
   selector:
     matchLabels:
       app: ${APP_NAME}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
   template:
     metadata:
       labels:
@@ -20,3 +25,4 @@ spec:
         image: ${IMAGE}
         ports:
         - containerPort: 8080
+        imagePullPolicy: IfNotPresent

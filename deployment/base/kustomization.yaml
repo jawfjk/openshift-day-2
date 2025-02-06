@@ -1,6 +1,6 @@
 resources: 
-  - storage/pv.yaml
-  - storage/pvc.yaml
+
+  - pvc.yaml
   - configmap-w-storage.yaml
   - secret.yaml
   - deployment-w-storage.yaml

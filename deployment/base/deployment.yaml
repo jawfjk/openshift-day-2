@@ -4,7 +4,7 @@ metadata:
   name: ${APP_NAME}
   namespace: ${OPENSHIFT_NAMESPACE}
 spec:
-  replicas: 8
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:

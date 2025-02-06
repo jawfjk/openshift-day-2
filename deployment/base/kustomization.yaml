@@ -1,0 +1,8 @@
+resources: 
+  - storage/pv.yaml
+  - storage/pvc.yaml
+  - configmap-w-storage.yaml
+  - secret.yaml
+  - deployment-w-storage.yaml
+  - service.yaml
+  - route.yaml
